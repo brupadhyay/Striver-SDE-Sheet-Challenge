@@ -24,7 +24,7 @@ vector<int> nextPermutation(vector<int> &permutation, int n)
 }
 
 // OPTIMAL SOLUTION
-// TC - 
+// TC - O(n) {finding breakpoint} + O(n) {for finding next greater element} + O(n) {for reversing}
 
 vector<int> nextPermutation(vector<int> &permutation, int n)
 {
