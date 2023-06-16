@@ -52,3 +52,14 @@ vector<vector<int>> mergeIntervals(vector<vector<int>> &intervals)
     }
     return ans;
 }
+
+int main() {
+    vector<vector<int>> intervals({{1, 3}, {8, 10}, {2, 6}, {15, 18}});
+    vector<vector<int>> ans = mergeIntervals(intervals);
+
+    for(auto it: ans){
+        cout << it[0] << " "<<it[1] << "\n";
+    }
+
+    return 0;
+}
