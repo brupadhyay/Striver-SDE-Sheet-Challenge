@@ -76,7 +76,7 @@ int main() {
     }
 
     ListNode *middle = findMiddle(head);
-    cout << "Middle Node is " << middle -> data; 
+    cout << "Middle Node is -> " << middle -> data; 
 
     
     return 0;
