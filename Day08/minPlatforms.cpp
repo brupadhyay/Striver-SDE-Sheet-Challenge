@@ -84,23 +84,18 @@ TC - O(2nlogn) + O(2n)
 SC - O(1)
 */
 
-int countPlatforms2(int at[], int dt[], int n)
-{
-    sort(at, at + n);
-    sort(dt, dt + n);
-
+int countPlatforms2(int at[], int dt[], int n) {
+    sort(at, at+n);
+    sort(dt, dt+n);
+    
     int i = 1, j = 0;
     int plat_curr = 1;
     int plat_needed = 1;
-    while (i < n && j < n)
-    {
-        if (at[i] <= dt[j])
-        {
+    while(i<n && j<n){
+        if(at[i] <= dt[j]){
             plat_curr++;
             i++;
-        }
-        else if (at[i] > dt[j])
-        {
+        } else if(at[i] > dt[j]){
             plat_curr--;
             j++;
         }
@@ -114,5 +109,5 @@ int main()
     int arr[] = {900, 945, 955, 1100, 1500, 1800};
     int dep[] = {920, 1200, 1130, 1150, 1900, 2000};
     int n = sizeof(dep) / sizeof(dep[0]);
-    cout << "Minimum number of Platforms required " << countPlatforms1(arr, dep, n) << endl;
+    cout << "Minimum number of Platforms required " << countPlatforms2(arr, dep, n) << endl;
 }
