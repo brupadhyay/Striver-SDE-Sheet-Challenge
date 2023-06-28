@@ -5,6 +5,10 @@ Problem Statement: Given a value V, if we want to make a change for V Rs, and we
 #include <vector>
 using namespace std;
 
+/*
+TC - O(V) { we keep checking until our amount becomes zero }
+SC - O(1)
+*/
 int findMinimumCoins(int amount){
     // start from maximum eventually notes will be minimum
     int notes[] = {1000, 500, 100, 50, 20, 10, 5, 2, 1};
