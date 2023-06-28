@@ -45,7 +45,7 @@ void maximumMeetings(int start[], int end[], int n)
     vector<int> ans;
     vector<pair<int, int>> meetings;
     meetings.push_back({meet[0].start, meet[0].end});
-        ans.push_back(meet[0].pos);
+    ans.push_back(meet[0].pos);
     int limit = meet[0].end;
     // O(n)
     for (int i = 1; i < n; i++)
