@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "iomanip": "cpp",
-        "atomic": "cpp",
-        "utility": "cpp"
-    }
-}
