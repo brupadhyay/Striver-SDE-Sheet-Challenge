@@ -51,7 +51,7 @@ class Solution {
             
             subsetHelper2(i + 1, arr, n, subset, ans);
             
-            // backtrack
+            // backtrack and non-pick
             subset.pop_back();
         }
     }

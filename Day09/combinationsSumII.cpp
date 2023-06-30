@@ -18,13 +18,15 @@ vector<vector<int>> &ans){
 	}
 
 	for(int i = ind;i<n;i++){
-        // skipping duplicate other than first
+        // skipping duplicate other than first occurence
 		if(i != ind && arr[i] == arr[i-1]) continue;
         // as array is sorted we break here
 		if(arr[i] > target) break;
         
+		// pick the element
 		subset.push_back(arr[i]);
 		findCombinations(i + 1, arr, n, target - arr[i], subset, ans);
+		// non pick
 		subset.pop_back();
 	}
 }
