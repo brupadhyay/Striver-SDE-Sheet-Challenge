@@ -7,7 +7,7 @@ using namespace std;
 
 // * Time Complexity: O(N^M) (n raised to m) where m is colours
 
-// * Space Complexity: O(N) { recursion stack space } + O(N + 2E) { for adjacency list }
+// * Space Complexity: O(N) { recursion stack space } + O(2E) { for adjacency list }
 
 bool isPossible(int node, int currentColor, vector<int> adjList[], int color[]){
     for(auto adjNode: adjList[node]){
