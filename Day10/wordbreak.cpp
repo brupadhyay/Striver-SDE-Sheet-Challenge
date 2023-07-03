@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+TC - 2^n { where n is size of string s } + O(klogk) { mapping wordDict }
+SC - O(k) { word dictionary } + O(n) { stack space }
+*/
+
 class Solution {
     bool solve(int index, string s, map<string, bool> &mpp){
         if(index >= s.size()){
