@@ -40,8 +40,8 @@ int ninjaAndLadoos1(vector<int> &row1, vector<int> &row2, int m, int n, int k) {
  * Time Complexity - O(log(min(m, n)))
  * Space Complexity - O(1)
  * Edge cases - 
- * 1. if (k < min(m, n)) then we can't take more than k elements from one array
- * 2. if (k > max(m, n)) then low can't take 0 elements it has to be min(0, k - max(m, n))
+ * 1. if (k < min(m, n)) then we can't take more than k elements from one array, high = min(k, min(m, n))
+ * 2. if (k > max(m, n)) then low can't take 0 elements it has to be max(0, k - max(m, n))
 */
 
 #include <climits>
