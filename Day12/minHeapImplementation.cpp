@@ -9,7 +9,7 @@ class minheap{
     minheap(){
         heap.resize(0);
     }
-
+    // O(logn)
     void insertInMinHeap(int value){
         // add the element
         heap.push_back(value);
@@ -27,7 +27,7 @@ class minheap{
             }
         }
     }
-
+    // O(logn)
     void deleteInMinHeap(){
         // deletion from top
         int size = heap.size();

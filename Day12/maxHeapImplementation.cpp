@@ -9,7 +9,7 @@ class maxheap{
     maxheap(){
         heap.resize(0);
     }
-
+    // O(logn)
     void insertInMaxHeap(int value){
         // add the element
         heap.push_back(value);
@@ -28,6 +28,7 @@ class maxheap{
         }
     }
 
+    // O(logn)
     void deleteInMaxHeap(){
         // deletion from top
         int size = heap.size();
