@@ -1,6 +1,35 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
+/**
+ * BRUTE FORCE - treating as a graph problem
+ * a celebrity is someone who's outdegree is 0 and indegree is n - 1 elements
+ * like others know him but he doesn't knows anyone
+ * TC - O(N^2) + O(N)
+ * SC - O(2N) { couple of arrays }
+*/
+
+int findCelebrity(int n) {
+	int indegree[n] = {0};
+	int outdegree[n] = {0};
+	
+	for(int i = 0;i<n;i++){
+		for(int j = 0;j<n;j++){
+			if(knows(i, j)){
+				indegree[j]++;
+				outdegree[i]++;
+			}
+		}
+	}
+
+	for(int i = 0;i<n;i++){
+		if(indegree[i] == n-1 && outdegree[i] == 0){
+			return i;
+		}
+	}
+	return -1;
+}
+
 #define n 5
 
 /*
