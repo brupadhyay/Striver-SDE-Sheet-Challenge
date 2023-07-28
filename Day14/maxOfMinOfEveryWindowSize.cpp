@@ -49,7 +49,7 @@ vector<int> maxMinWindow(vector<int> a, int n) {
 }
 
 /**
- * TC - O(n) { courple of passes }
+ * TC - O(n) { couple of passes }
  * SC - O(n) { for using stack and additional arrays }
 */
 
