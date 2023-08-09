@@ -1,5 +1,5 @@
 /**Using Linked List
- * OR Using BST
+ * * OR Using BST -> Search/Insertion/Deletion - O(logn)
 */
 
 #include <iostream>
