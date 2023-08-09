@@ -1,5 +1,6 @@
 /**Using Linked List
- * * OR Using BST -> Search/Insertion/Deletion - O(logn)
+ * * OR Using BST -> Search/Insertion - O(logn)
+ * * Deletion - Worst Case - O(H) { H: height of tree }
 */
 
 #include <iostream>
