@@ -50,17 +50,17 @@ BSTNode* search(BSTNode* root, int key){
     return NULL;
 }
 
-BSTNode* deletionInBST(BSTNode* root, int key){
+BSTNode* deletionInBST1(BSTNode* root, int key){
     // if tree is empty
     if(root == NULL){
         return root;
     }
 
     if(root -> key < key){
-        root -> right = deletionInBST(root -> right, key);
+        root -> right = deletionInBST1(root -> right, key);
         return root;
     } else if(root -> key > key){
-        root -> left = deletionInBST(root -> left, key);
+        root -> left = deletionInBST1(root -> left, key);
         return root;
     }
     // coming here means curr node is to be deleted
@@ -88,6 +88,53 @@ BSTNode* deletionInBST(BSTNode* root, int key){
         } else {
             // skewed tree
             succParent -> right = succ -> right;
+        }
+        root -> key = succ -> key;
+        root -> val = succ -> val;
+        
+        delete succ;
+        return root;
+    }    
+}
+
+BSTNode* deletionInBST2(BSTNode* root, int key){
+    // if tree is empty
+    if(root == NULL){
+        return root;
+    }
+
+    if(root -> key < key){
+        root -> right = deletionInBST2(root -> right, key);
+        return root;
+    } else if(root -> key > key){
+        root -> left = deletionInBST2(root -> left, key);
+        return root;
+    }
+    // coming here means curr node is to be deleted
+    if(root -> left == NULL){
+        BSTNode* temp = root -> right;
+        delete root;
+        return temp;
+    } else if(root -> right == NULL){
+        BSTNode* temp = root -> left;
+        delete root;
+        return temp;
+    }
+    else {        
+        // if node has two childrens
+        // finding inorder predecessor
+        BSTNode* succParent = root;
+        BSTNode* succ = root -> left;
+        while(succ -> right != NULL){
+            succParent = succ;
+            succ = succ -> right;
+        }
+        if(succParent != root){
+            // * very important step
+            succParent -> right = succ -> left;
+        } else {
+            // skewed tree
+            succParent -> left = succ -> left;
         }
         root -> key = succ -> key;
         root -> val = succ -> val;
@@ -128,10 +175,10 @@ int main(){
     }
     inorder(root);
     cout << "\nAfter deletion \n";
-    root = deletionInBST(root, 40);
+    root = deletionInBST2(root, 40);
     
     inorder(root);
-    root = deletionInBST(root, 60);
+    root = deletionInBST2(root, 60);
     cout << "\nAfter deletion of 60 \n";
     inorder(root);
     return 0;
