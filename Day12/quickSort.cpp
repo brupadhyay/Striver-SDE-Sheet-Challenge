@@ -18,6 +18,7 @@ int partition(int arr[], int low, int high){
     return i;
 }
 
+
 void quickSort(int arr[], int low, int high){
     if(low <= high){
         int index = partition(arr, low, high);
@@ -29,6 +30,7 @@ void quickSort(int arr[], int low, int high){
 
 int main() {
     int arr[] = {1, 9, 8, 10, 5};
+    // int arr[] = {}
     int n = sizeof(arr)/sizeof(arr[0]);
     quickSort(arr, 0, n-1);
 
